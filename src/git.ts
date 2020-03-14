@@ -6,7 +6,15 @@ const execGit = async (args: string[]): Promise<string> => {
 };
 
 export const getChangedFiles = async (revision: string): Promise<string[]> =>
-  (await execGit(["diff", "--name-only", "--diff-filter=ACMRTUB", revision]))
+  (
+    await execGit([
+      "diff",
+      "--diff-filter=ACMRTUB",
+      "--name-only",
+      "--relative",
+      revision,
+    ])
+  )
     .split("\n")
     .filter(Boolean);
 

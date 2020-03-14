@@ -8,3 +8,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Features
 
 - initial commit
+
+# 0.1.1 (2020-03-14)
+
+### Bug Fixes
+
+- git diff relative to cwd
