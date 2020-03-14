@@ -1,0 +1,77 @@
+{
+  "name": "eslint-changeset",
+  "version": "0.1.0",
+  "description": "Runs ESLint on changed files",
+  "author": "Joshua David <@jdanil>",
+  "license": "MIT",
+  "homepage": "https://github.com/jdanil/eslint-changeset",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jdanil/eslint-changeset.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jdanil/eslint-changeset/issues"
+  },
+  "main": "./src",
+  "bin": "./bin/eslint-changeset.js",
+  "types": "./src",
+  "files": [
+    "bin/**/*.d.ts",
+    "bin/**/*.js",
+    "src/**/*.d.ts",
+    "src/**/*.js"
+  ],
+  "keywords": [
+    "branch",
+    "changed",
+    "changeset",
+    "delta",
+    "diff",
+    "eslint",
+    "git",
+    "lint"
+  ],
+  "engines": {
+    "node": "^10 || ^12 || ^13"
+  },
+  "scripts": {
+    "audit-ci": "audit-ci",
+    "clean": "tsc --build --clean",
+    "compile": "tsc --build",
+    "libyear": "libyear",
+    "lint": "eslint",
+    "lint:all": "yarn lint \"**/*\"",
+    "lint:diff": "ts-node ./bin/eslint-changeset",
+    "prepack": "tsc --build --force",
+    "prettier": "prettier",
+    "test": "jest --config .jestrc.json --passWithNoTests"
+  },
+  "peerDependencies": {
+    "eslint": "^6"
+  },
+  "dependencies": {
+    "execa": "^4.0.0",
+    "mri": "^1.1.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@types/eslint": "^6.1.8",
+    "@types/mri": "^1.1.0",
+    "@types/node": "^13.7.7",
+    "@typescript-eslint/eslint-plugin": "^2.22.0",
+    "@typescript-eslint/parser": "^2.22.0",
+    "audit-ci": "^2.5.1",
+    "eslint": "^6.8.0",
+    "husky": "^4.2.3",
+    "jest": "^25.1.0",
+    "jest-environment-jsdom-sixteen": "^1.0.2",
+    "libyear": "^0.4.1",
+    "lint-staged": "^10.0.8",
+    "prettier": "^1.19.1",
+    "ts-jest": "^25.2.1",
+    "ts-node": "^8.7.0",
+    "tslib": "^1.11.1",
+    "typescript": "^3.8.3"
+  }
+}
