@@ -1,4 +1,4 @@
-# `eslint-changeset`
+# `eslint-changeset` &middot; ![](https://github.com/jdanil/eslint-changeset/workflows/ci/badge.svg)
 
 Runs [ESLint](https://eslint.org/) on changed files.
 

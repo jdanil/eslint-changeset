@@ -17,7 +17,7 @@ export const eslintChangeset = async ({
   const files = await getChangedFiles(revision);
   if (files.length) {
     console.log(`📄 Linting ${files.length} files...`);
-    files.forEach(file => {
+    files.forEach((file) => {
       console.log(`- ${file}`);
     });
   } else {
