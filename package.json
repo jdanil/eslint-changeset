@@ -1,6 +1,6 @@
 {
   "name": "eslint-changeset",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Runs ESLint on changed files",
   "author": "Joshua David <@jdanil>",
   "license": "MIT",
@@ -32,7 +32,7 @@
     "lint"
   ],
   "engines": {
-    "node": "^10 || ^12 || ^13"
+    "node": ">=10"
   },
   "scripts": {
     "audit-ci": "audit-ci",
@@ -49,7 +49,7 @@
     "test": "jest --config .jestrc.json --passWithNoTests"
   },
   "peerDependencies": {
-    "eslint": "^6"
+    "eslint": ">=6"
   },
   "dependencies": {
     "execa": "^4.0.0",
@@ -58,22 +58,22 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
-    "@types/eslint": "^6.1.8",
+    "@types/eslint": "^6.8.0",
     "@types/mri": "^1.1.0",
-    "@types/node": "^13.9.4",
-    "@typescript-eslint/eslint-plugin": "^2.25.0",
-    "@typescript-eslint/parser": "^2.25.0",
+    "@types/node": "^13.13.1",
+    "@typescript-eslint/eslint-plugin": "^2.29.0",
+    "@typescript-eslint/parser": "^2.29.0",
     "audit-ci": "^2.5.1",
     "eslint": "^6.8.0",
-    "husky": "^4.2.3",
-    "jest": "^25.2.3",
+    "husky": "^4.2.5",
+    "jest": "^25.4.0",
     "jest-environment-jsdom-sixteen": "^1.0.3",
-    "libyear": "^0.4.1",
-    "lint-staged": "^10.0.9",
-    "prettier": "^2.0.2",
+    "libyear": "^0.4.2",
+    "lint-staged": "^10.1.7",
+    "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
-    "ts-jest": "^25.2.1",
-    "ts-node": "^8.8.1",
+    "ts-jest": "^25.4.0",
+    "ts-node": "^8.9.0",
     "tslib": "^1.11.1",
     "typescript": "^3.8.3"
   }

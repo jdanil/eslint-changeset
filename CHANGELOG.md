@@ -14,3 +14,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Bug Fixes
 
 - git diff relative to cwd
+
+# 0.1.2 (2020-04-22)
+
+### Bug Fixes
+
+- support node >=10
