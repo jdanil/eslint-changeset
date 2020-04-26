@@ -1,5 +1,4 @@
-import { CLIEngine } from "eslint";
-
+import { eslint } from "./eslint";
 import { getChangedFiles, getRevision } from "./git";
 
 export const eslintChangeset = async ({
@@ -26,12 +25,8 @@ export const eslintChangeset = async ({
   }
 
   // eslint execute
-  const cli = new CLIEngine({ fix });
-  const { errorCount, results } = cli.executeOnFiles(files);
-  const formatter = cli.getFormatter();
-  console.log(
-    formatter(CLIEngine.getErrorResults(results)) || "👌 No issues found.",
-  );
+  const { errorCount, formattedResults } = await eslint(files, fix);
+  console.log(formattedResults || "👌 No issues found.");
 
   // exit
   if (errorCount) {
