@@ -20,3 +20,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Bug Fixes
 
 - support node >=10
+
+# 0.1.3 (2020-04-26)
+
+### Bug Fixes
+
+- support eslint@7 ESLint API
