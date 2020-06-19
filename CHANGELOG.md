@@ -26,3 +26,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Bug Fixes
 
 - support eslint@7 ESLint API
+
+# 0.1.4 (2020-06-19)
+
+- exit on error when running eslint@7

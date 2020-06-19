@@ -17,23 +17,16 @@ This project contains a script that will run ESLint on a list of changed files.
 npx eslint-changeset
 ```
 
+### `pnpm`
+
+```bash
+pnpx libyear
+```
+
 ### `yarn@1` (`yarn classic`)
 
 ```bash
 yarn add --dev eslint-changeset
-```
-
-`package.json`
-
-```json
-{
-  "scripts": {
-    "eslint-changeset": "eslint-changeset"
-  }
-}
-```
-
-```bash
 yarn eslint-changeset
 ```
 

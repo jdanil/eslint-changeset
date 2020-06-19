@@ -1,14 +1,12 @@
-// @ts-expect-error
 import { CLIEngine, ESLint } from "eslint";
 
-const asyncFilter = async (
-  arr: unknown[],
-  predicate: (value: unknown) => unknown,
+const asyncFilter = async <T>(
+  arr: T[],
+  predicate: (value: T) => Promise<boolean>,
 ) =>
-  arr.reduce(
-    async (memo, e) =>
-      (await predicate(e)) ? [...(await (memo as unknown[])), e] : memo,
-    [],
+  arr.reduce<Promise<T[]>>(
+    async (memo, e) => ((await predicate(e)) ? [...(await memo), e] : memo),
+    Promise.resolve([]),
   );
 
 const eslint6 = (files: string[], fix?: boolean) => {
@@ -27,10 +25,11 @@ const eslint7 = async (files: string[], fix?: boolean) => {
     async (file) => !(await cli.isPathIgnored(file)),
   );
   const results = await cli.lintFiles(filteredFiles);
+  const errorCount = results.reduce((acc, cur) => acc + cur.errorCount, 0);
   const formatter = await cli.loadFormatter();
   const formattedResults = formatter.format(results);
 
-  return { errorCount: results.errorCount, formattedResults };
+  return { errorCount, formattedResults };
 };
 
 export const eslint = async (files: string[], fix?: boolean) =>
