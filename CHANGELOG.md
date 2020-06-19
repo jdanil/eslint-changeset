@@ -30,3 +30,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 # 0.1.4 (2020-06-19)
 
 - exit on error when running eslint@7
+- resolve linting issues
