@@ -5,18 +5,38 @@ const execGit = async (args: string[]): Promise<string> => {
   return stdout;
 };
 
-export const getChangedFiles = async (revision: string): Promise<string[]> =>
+const getChangedFilesByDiff = async (revision: string): Promise<string[]> =>
   (
-    await execGit([
-      "diff",
-      "--diff-filter=ACMRTUB",
-      "--name-only",
-      "--relative",
-      revision,
-    ])
+    await execGit(
+      [
+        "diff",
+        "--diff-filter=ACMRTUB",
+        "--name-only",
+        "--relative",
+        revision,
+      ].filter(Boolean),
+    )
   )
     .split("\n")
     .filter(Boolean);
 
-export const getRevision = async (branch?: string): Promise<string> =>
-  (await execGit(["merge-base", "HEAD", branch ?? "master"])).trim();
+const getChangedFilesByLog = async (branch: string): Promise<string[]> =>
+  (await execGit(["log", "--name-only", "--pretty=format:", `${branch}..HEAD`]))
+    .split("\n")
+    .filter(Boolean);
+
+export const getChangedFiles = async (revision: string): Promise<string[]> => {
+  try {
+    return await getChangedFilesByDiff(revision);
+  } catch {
+    return await getChangedFilesByLog(revision);
+  }
+};
+
+export const getRevision = async (branch: string): Promise<string> => {
+  try {
+    return (await execGit(["merge-base", "HEAD", branch])).trim();
+  } catch {
+    return null;
+  }
+};

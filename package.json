@@ -48,6 +48,7 @@
     "prepack": "tsc --build --force",
     "prepare": "husky install",
     "test": "jest --config .jestrc.json --passWithNoTests",
+    "test:ci": "yarn test --ci",
     "test:coverage": "yarn test --coverage",
     "test:precommit": "yarn test --bail --findRelatedTests",
     "test:pull-request": "yarn test:ci --changedSince=\"master\""
@@ -81,5 +82,8 @@
     "ts-node": "^9.1.1",
     "tslib": "^2.1.0",
     "typescript": "^4.2.3"
+  },
+  "resolutions": {
+    "jest-changed-files": "~26.1.0"
   }
 }

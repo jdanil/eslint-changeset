@@ -2,7 +2,7 @@ import { eslint } from "./eslint";
 import { getChangedFiles, getRevision } from "./git";
 
 export const eslintChangeset = async ({
-  branch,
+  branch = "master",
   fix,
   since,
 }: {
@@ -11,7 +11,7 @@ export const eslintChangeset = async ({
   since?: string;
 }): Promise<void> => {
   // scm get files
-  const revision = since ?? (await getRevision(branch));
+  const revision = since ?? (await getRevision(branch)) ?? branch;
   console.log(`🔍 Finding files changed since ${revision}.`);
   const files = await getChangedFiles(revision);
   if (files.length) {
