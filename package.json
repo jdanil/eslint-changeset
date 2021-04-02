@@ -56,7 +56,7 @@
     "mri": "^1.1.5"
   },
   "devDependencies": {
-    "@commitlint/cli": "^9.0.1",
+    "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^9.0.1",
     "@types/eslint": "^7.2.0",
     "@types/mri": "^1.1.0",
