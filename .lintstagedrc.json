@@ -1,4 +1,4 @@
 {
-  "*": ["prettier --write"],
-  "*.ts": ["eslint --fix", "yarn test --bail --findRelatedTests"]
+  "*": ["eslint --cache --fix", "prettier --write"],
+  "*.[jt]s?(x)": ["yarn test --bail --findRelatedTests"]
 }

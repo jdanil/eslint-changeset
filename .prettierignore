@@ -1,0 +1,24 @@
+# artifacts
+*.d.ts
+*.js
+*.tgz
+
+# git
+.gitignore
+
+# husky
+.husky/
+
+# prettier
+.prettierignore
+
+# typescript
+*.tsbuildinfo
+
+# yarn
+yarn-debug.log
+yarn-error.log
+yarn.lock
+
+# unsupported
+LICENSE

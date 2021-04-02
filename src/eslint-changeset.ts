@@ -9,7 +9,7 @@ export const eslintChangeset = async ({
   branch?: string;
   fix?: boolean;
   since?: string;
-}) => {
+}): Promise<void> => {
   // scm get files
   const revision = since ?? (await getRevision(branch));
   console.log(`🔍 Finding files changed since ${revision}.`);
