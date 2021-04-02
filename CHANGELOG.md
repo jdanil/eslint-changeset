@@ -29,5 +29,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # 0.1.4 (2020-06-19)
 
+### Bug Fixes
+
 - exit on error when running eslint@7
 - resolve linting issues
+
+# 0.1.5 (2021-04-03)
+
+### Bug Fixes
+
+- handle detached head

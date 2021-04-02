@@ -1,6 +1,6 @@
 {
   "name": "eslint-changeset",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Runs ESLint on changed files",
   "author": "Joshua David <@jdanil>",
   "license": "MIT",
