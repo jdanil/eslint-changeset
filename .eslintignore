@@ -7,6 +7,13 @@
 *.tsbuildinfo
 
 # yarn
+.pnp.js
+.yarn/build-state.yml
+.yarn/cache/
+.yarn/releases/
+.yarn/unplugged/
+package-lock.json
+node_modules/
 yarn-debug.log
 yarn-error.log
 yarn.lock
