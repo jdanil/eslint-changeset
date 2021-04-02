@@ -26,7 +26,7 @@ export const eslintChangeset = async ({
 
   // eslint execute
   const { errorCount, formattedResults } = await eslint(files, fix);
-  console.log(formattedResults || "👌 No issues found.");
+  console.log(formattedResults || "👌 No issues found");
 
   // exit
   if (errorCount) {
